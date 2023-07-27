@@ -1,0 +1,460 @@
+
+body {
+  background-color: #f5f5dc;
+  color: #333;
+  font-family: 'Poppins', sans-serif; /* Use Poppins font for body text */
+  margin: 0;
+  min-height: 100vh; /* Ensure the body covers the full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  font-family: 'Poppins', sans-serif; /* Use Poppins font for header text */
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+header nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  /* Add some padding to make the clickable area larger */
+  padding: 5px 10px;
+  /* Add a background color on hover to make it more obvious */
+  transition: background-color 0.2s;
+}
+
+/* Apply underline on hover to indicate interactivity */
+header nav ul li a:hover {
+  text-decoration: underline;
+  /* Add a subtle background color on hover */
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+main {
+  flex: 1; /* Allow main content to grow and fill available space */
+}
+
+/* Styles for the hero section */
+#hero {
+  color: #333;
+  padding: 60px 0;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-left {
+  flex: 1;
+  text-align: center;
+  animation: slideInLeft 1s ease; /* Apply the slide-in animation */
+}
+
+.hero-right {
+  flex: 1;
+  text-align: left; /* Align the text to the left */
+  padding-top: 20px; /* Add some spacing between the image and text */
+  padding-left: 10px; /* Adjust the left padding to bring the text closer to the image */
+}
+
+.hero-title {
+  font-size: 36px;
+  margin-bottom: 10px; /* Reduce the margin to make it more compact */
+}
+
+.hero-subtitle {
+  font-size: 24px;
+}
+
+/* Define the slide-in animation */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* ... existing styles ... */
+
+
+.circle-portrait {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.circle-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#about {
+  background-color: #fff;
+  padding: 40px 20px;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9); /* Add a background color with transparency */
+  padding: 20px; /* Add some padding to the content for better readability */
+  opacity: 0; /* Set initial opacity to 0 to hide the section */
+  transform: translateY(20px); /* Slide content 20px down initially */
+  transition: opacity 1s ease, transform 1s ease; /* Add transition for the animation */
+  background-color: #f9f9f9; /* Light gray background color */
+  color: #333; /* Dark text color */
+}
+
+.about-content.fade-in {
+  opacity: 1; /* Fade the section in when the animation class is applied */
+  transform: translateY(0); /* Slide content back to its original position */
+}
+
+.about-content > div {
+  position: relative; /* Add position: relative to make the child elements position correctly */
+  z-index: 1; /* Set a higher z-index to the text content so it appears above the background */
+  max-width: 900px;
+}
+/* ... existing styles ... */
+
+/* Styles for the experience section */
+.experience-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px 0 80px; /* Add more bottom padding to create space at the end */
+  background-color: #333;
+  color: #fff;
+}
+
+.experience-content h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.experience-item {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #444;
+  opacity: 0; /* Set initial opacity to 0 to hide the item */
+}
+
+.experience-item.fade-in {
+  opacity: 1; /* Set opacity to 1 to make the item fade in */
+  transition: opacity 1s ease; /* Add a smooth transition effect for the opacity change */
+}
+
+.experience-item h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.experience-item p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+/* ... existing styles ... */
+
+/* Styles for the Skills section */
+#skills {
+  background-color: #f7ead9; /* Light beige background */
+  padding: 60px 0;
+  margin-bottom: 60px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+  background-color: #f1d4b3; /* Slightly darker beige for the header */
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.skills-content {
+  display: flex;
+  flex-wrap: wrap; /* Allow the skill sections to wrap to the next line if needed */
+  justify-content: center; /* Center the skill sections horizontally */
+  gap: 30px; /* Add spacing between the skill sections */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.technical-skills,
+.language-skills {
+  flex: 1; /* Both sections take equal space */
+  padding: 20px;
+  background-color: #fff; /* White background for the skills content */
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
+  text-align: center; /* Center the text inside the sections */
+}
+
+.technical-skills h3,
+.language-skills h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #555; /* Dark gray color for the section headers */
+}
+
+.skills-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.skills-content li {
+  display: flex;
+  justify-content: center; /* Center the key-value pairs horizontally */
+  margin-bottom: 4px; /* Adjust spacing between each skill pair */
+}
+
+.skills-content li strong {
+  min-width: 150px; /* Set a minimum width for the keys to ensure alignment */
+  text-align: left; /* Right-align the keys */
+  padding-right: 10px; /* Add some spacing between the keys and values */
+  color: #555; /* Dark gray color for the keys */
+}
+
+.skills-content li span {
+  flex: 1; /* Allow the values to take up the remaining space */
+  text-align: left; /* Left-align the values */
+}
+
+
+
+#about h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+#about p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 4px 0;
+  font-size: 14px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+
+/* New CSS for the footer container */
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 10px; /* Add some padding to the footer */
+  background-color: #333; /* Add a background color to the footer */
+}
+
+.social-media-icons {
+  display: flex;
+  align-items: center;
+}
+
+.social-media-icons a {
+  display: inline-flex; /* Use inline-flex to control the size of the anchor element */
+  align-items: center; /* Align the icons vertically in the center */
+  justify-content: center; /* Align the icons horizontally in the center */
+  margin: 0 10px;
+  width: 30px; /* Set the width of the anchor element */
+  height: 30px; /* Set the height of the anchor element */
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  background-color: #fff; /* Add a background color to the icons */
+}
+
+.social-media-icons img {
+  width: 20px; /* Adjust the size of the icons */
+  height: 20px; /* Adjust the size of the icons */
+  object-fit: cover; /* Ensure the icons maintain their aspect ratio */
+}
+
+/* New CSS for the copyright text */
+.footer-content p {
+  margin: 0 10px; /* Add margin to create space between the text and icons */
+}
+
+/* Add a fade-in animation to the hero title and subtitle */
+.hero-title,
+.hero-subtitle {
+  animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add a slide-in animation to the circle portrait */
+.circle-portrait {
+  animation: slideInRight 1s ease-in-out;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Add a scale-in animation to the social media icons */
+.social-media-icons a {
+  animation: scaleIn 0.5s ease-in-out;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Slide content 20px down initially */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Slide content back to its original position */
+  }
+}
+
+/* Responsive Styles */
+
+
+/* Media Query for Tablets and Small Screens (Max-width: 768px) */
+@media only screen and (max-width: 768px) {
+  header nav ul {
+    text-align: center; /* Center the navigation items on smaller screens */
+  }
+  header nav ul li {
+    display: block; /* Display list items as blocks to stack them vertically */
+    margin: 10px 0; /* Add some vertical spacing between navigation items */
+  }
+
+  /* Reduce the font size of the hero title and subtitle on smaller screens */
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .hero-subtitle {
+    font-size: 20px;
+  }
+
+  .circle-portrait {
+    margin-top: 20px; /* Add some spacing between the portrait and the text on smaller screens */
+  }
+}
+
+/* Media Query for Mobile Devices (Max-width: 480px) */
+@media only screen and (max-width: 480px) {
+  /* Adjust the font size of the hero title and subtitle further for smaller screens */
+  .hero-title {
+    font-size: 24px;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+  }
+
+  /* Center the circle portrait on smaller screens */
+  .circle-portrait {
+    margin: 20px auto; /* Auto margins to center the portrait horizontally */
+  }
+
+  /* Add some spacing between the social media icons and the copyright text in mobile view */
+  .social-media-icons {
+    margin-bottom: 10px;
+  }
+
+  /* Adjust the size of the social media icons for mobile view */
+  .social-media-icons a {
+    width: 25px;
+    height: 25px;
+  }
+
+  /* Adjust the font size of the copyright text for mobile view */
+  .footer-content p {
+    font-size: 12px;
+  }
+}
+
+
+/* Apply two columns layout for larger screens */
+@media screen and (min-width: 768px) {
+  .experience-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.experience-item {
+  /* ... existing styles ... */
+  opacity: 0; /* Set initial opacity to 0 to hide the item */
+}
+
+.experience-item.fade-in {
+  /* ... existing styles ... */
+  opacity: 1; /* Set opacity to 1 to make the item fade in */
+  transition: opacity 1s ease; /* Add a smooth transition effect for the opacity change */
+}

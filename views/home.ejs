@@ -1,0 +1,116 @@
+<%- include('header') %>
+
+<main>
+  <section id="hero">
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="circle-portrait">
+          <img src="your-image.jpg" alt="Your Portrait">
+        </div>
+      </div>
+      <div class="hero-right">
+        <h1 class="hero-title">Hello, I'm Sayyid Haris!</h1>
+        <p class="hero-subtitle">Web Developer</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about-content">
+    <div>
+      <h2>About Me</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla bibendum ac
+        justo et cursus. Proin et purus a felis ullamcorper blandit eget nec eros.
+        Nunc auctor, sapien vitae rhoncus suscipit, justo tellus tristique nunc, id
+        euismod nunc libero id tellus.
+      </p>
+    </div>
+  </section>
+
+
+  <section id="experience" class="experience-content">
+    <div>
+      <h2>Experience</h2>
+      <div class="experience-grid">
+        <div class="experience-item">
+          <h3>Software Engineer Intern</h3>
+          <p class="experience-duration">Summer 20XX</p>
+          <p>
+            Worked as a Software Engineer intern, assisting in the development of web applications
+            and collaborating with the team on various projects.
+          </p>
+        </div>
+        <div class="experience-item">
+          <h3>Laboratory Assistant</h3>
+          <p class="experience-duration">Fall 20XX - Spring 20XX</p>
+          <p>
+            Served as a Laboratory Assistant, performing experiments, conducting research,
+            and supporting faculty members in the laboratory.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-header">
+      <h2>Skills</h2>
+    </div>
+    <div class="skills-content">
+      <div class="technical-skills">
+        <h3>Technical Skills</h3>
+        <ul>
+          <li><strong>Python:</strong> 5 years</li>
+          <li><strong>JavaScript:</strong> 3 years</li>
+          <li><strong>PHP:</strong> 2 years</li>
+          <li><strong>C++:</strong> 3 years</li>
+        </ul>
+      </div>
+      <div class="language-skills">
+        <h3>Language Skills</h3>
+        <ul>
+          <li><strong>Indonesia:</strong> Native &nbsp;&nbsp;</li>
+          <li><strong>English:</strong> B2 Level</li>
+          <li><strong>Japanese:</strong> N4 Level</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  
+</main>
+
+<%- include('footer') %>
+
+<script>
+  const aboutSection = document.querySelector('#about');
+  const experienceItems = document.querySelectorAll('.experience-item');
+
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+    );
+  }
+
+  function fadeInItems() {
+    experienceItems.forEach((item, index) => {
+      if (isInViewport(item) && !item.classList.contains('fade-in')) {
+        setTimeout(() => {
+          item.classList.add('fade-in');
+        }, index * 400); // Adjust the interval (milliseconds) between each item appearance
+      }
+    });
+  }
+
+  function handleScroll() {
+    if (isInViewport(aboutSection) && !aboutSection.classList.contains('fade-in')) {
+      aboutSection.classList.add('fade-in');
+    }
+
+    fadeInItems();
+  }
+
+  window.addEventListener('scroll', handleScroll);
+</script>
+
