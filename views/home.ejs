@@ -10,7 +10,7 @@
       </div>
       <div class="hero-right">
         <h1 class="hero-title">Hello, I'm Sayyid Haris!</h1>
-        <p class="hero-subtitle">Web Developer</p>
+        <p class="hero-subtitle">Aspiring SE, Class of 2023</p>
       </div>
     </div>
   </section>
@@ -19,10 +19,10 @@
     <div>
       <h2>About Me</h2>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla bibendum ac
-        justo et cursus. Proin et purus a felis ullamcorper blandit eget nec eros.
-        Nunc auctor, sapien vitae rhoncus suscipit, justo tellus tristique nunc, id
-        euismod nunc libero id tellus.
+        A passionate and driven individual who recently graduated from Sumatra Institute of Technology (ITERA) with a major in Informatics Engineering. Throughout my academic journey, I have maintained a GPA of 3.86 out of 4.00, demonstrating my dedication to excellence. 
+        I have always had a deep love for coding, especially in the realm of AI and software development. Building innovative software solutions and exploring the possibilities of artificial intelligence excite me beyond measure. 
+        Additionally, I have a profound interest in languages and cultures, which has further enriched my perspective on problem-solving and creativity.
+        I am now eagerly seeking a dynamic and collaborative environment where I can continue learning, apply my skills, and contribute to meaningful projects.
       </p>
     </div>
   </section>
@@ -34,18 +34,18 @@
       <div class="experience-grid">
         <div class="experience-item">
           <h3>Software Engineer Intern</h3>
-          <p class="experience-duration">Summer 20XX</p>
+          <p class="experience-duration">Datangin, Jul - Dec 2022</p>
           <p>
-            Worked as a Software Engineer intern, assisting in the development of web applications
-            and collaborating with the team on various projects.
+            Worked as a Software Engineer intern, assisting in the development of web & mobile applications
+            and collaborating with the team on various projects, most notably the development of payment gateway system.
           </p>
         </div>
         <div class="experience-item">
           <h3>Laboratory Assistant</h3>
-          <p class="experience-duration">Fall 20XX - Spring 20XX</p>
+          <p class="experience-duration">ITERA, Jan 2021 - Dec 2022</p>
           <p>
             Served as a Laboratory Assistant, performing experiments, conducting research,
-            and supporting faculty members in the laboratory.
+            and supporting faculty members in the university environment.
           </p>
         </div>
       </div>
@@ -60,18 +60,18 @@
       <div class="technical-skills">
         <h3>Technical Skills</h3>
         <ul>
-          <li><strong>Python:</strong> 5 years</li>
-          <li><strong>JavaScript:</strong> 3 years</li>
-          <li><strong>PHP:</strong> 2 years</li>
-          <li><strong>C++:</strong> 3 years</li>
+          <li><strong>Python</strong>: Flask, sklearn, pandas &nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;</li>
+          <li><strong>Javascript</strong>: ReactJS, ExpressJS, NextJS </li>
+          <li><strong>PHP</strong>: Laravel, CodeIgniter  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</li>
+          <li><strong>C++</strong>: CP  &nbsp;&nbsp; &nbsp;&NonBreakingSpace;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</li>
         </ul>
       </div>
       <div class="language-skills">
         <h3>Language Skills</h3>
         <ul>
-          <li><strong>Indonesia:</strong> Native &nbsp;&nbsp;</li>
-          <li><strong>English:</strong> B2 Level</li>
-          <li><strong>Japanese:</strong> N4 Level</li>
+          <li><strong>Indonesia</strong>: Native &nbsp;&nbsp;</li>
+          <li><strong>English</strong>: B2 Level</li>
+          <li><strong>Japanese</strong>: N4 Level</li>
         </ul>
       </div>
     </div>
@@ -83,7 +83,12 @@
 
 <script>
   const aboutSection = document.querySelector('#about');
+  const skillsSection = document.querySelector('.skills-content');
   const experienceItems = document.querySelectorAll('.experience-item');
+  const technicalSkills = document.querySelector('.technical-skills');
+  const languageSkills = document.querySelector('.language-skills');
+  // get skill header
+  const skillHeader = document.querySelector('.section-header');
 
   function isInViewport(element) {
     const rect = element.getBoundingClientRect();
@@ -106,6 +111,18 @@
   function handleScroll() {
     if (isInViewport(aboutSection) && !aboutSection.classList.contains('fade-in')) {
       aboutSection.classList.add('fade-in');
+    }
+
+    // for skill
+    if (isInViewport(skillsSection) && !technicalSkills.classList.contains('fade-in')) {
+      skillHeader.classList.add('fade-in');
+      setTimeout(() => {
+        technicalSkills.classList.add('fade-in');    
+        setTimeout(() => {
+          languageSkills.classList.add('fade-in');
+        }, 400);  
+      }, 400);
+      //add timeout than fade in the language skill
     }
 
     fadeInItems();
